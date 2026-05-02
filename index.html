@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>MCH Tap Battle</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div id="screen-title" class="screen active">
+    <img id="title-logo" src="Image/Icons/mch_logo_horizontal.png" alt="MCH">
+    <h1>TAP BATTLE</h1>
+    <p>60秒で何体撃破できるか！？</p>
+    <button id="btn-start" class="btn">START</button>
+  </div>
+
+  <div id="screen-game" class="screen">
+    <div id="hud">
+      <div id="hud-left">撃破: <span id="score">0</span></div>
+      <div id="hud-right"><span id="timer">60</span>s</div>
+    </div>
+    <div id="battle-area">
+      <div id="enemy-hp-wrap"><div id="enemy-hp-fill"></div></div>
+      <div id="enemy-wrap">
+        <img id="enemy-img" src="" alt="Enemy">
+        <div id="effect-sprite"></div>
+      </div>
+      <div id="tap-hint">タップして攻撃！</div>
+    </div>
+    <div id="hero-panel">
+      <img id="hero-img" src="" alt="Hero">
+      <span id="vs-label">VS</span>
+    </div>
+  </div>
+
+  <div id="screen-result" class="screen">
+    <h2>BATTLE END</h2>
+    <div id="result-number"><span id="result-score">0</span></div>
+    <div id="result-label">体撃破！</div>
+    <button id="btn-retry" class="btn">もう一度</button>
+  </div>
+
+  <script src="game.js"></script>
+</body>
+</html>
