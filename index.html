@@ -11,26 +11,66 @@
   <div id="screen-title" class="screen active">
     <img id="title-logo" src="Image/Icons/mch_logo_horizontal.png" alt="MCH">
     <h1>TAP BATTLE</h1>
-    <p>60秒で何体撃破できるか！？</p>
+    <p>PHYとINTを駆使して敵を倒せ！</p>
     <button id="btn-start" class="btn">START</button>
   </div>
 
   <div id="screen-game" class="screen">
     <div id="hud">
-      <div id="hud-left">撃破: <span id="score">0</span></div>
+      <div id="hud-score">撃破: <span id="score">0</span></div>
       <div id="hud-right"><span id="timer">60</span>s</div>
     </div>
-    <div id="battle-area">
-      <div id="enemy-hp-wrap"><div id="enemy-hp-fill"></div></div>
-      <div id="enemy-wrap">
-        <img id="enemy-img" src="" alt="Enemy">
-        <div id="effect-sprite"></div>
+
+    <div id="battle-field">
+      <div id="player-side">
+        <div class="char-name" id="hero-name">—</div>
+        <img id="hero-img" src="" alt="Hero">
+        <div class="hp-bar-wrap">
+          <div class="hp-bar-fill" id="player-hp-fill"></div>
+        </div>
+        <div id="player-stats">
+          <span class="stat-chip phy">PHY <b id="stat-phy">0</b></span>
+          <span class="stat-chip int">INT <b id="stat-int">0</b></span>
+        </div>
       </div>
-      <div id="tap-hint">タップして攻撃！</div>
+
+      <div id="enemy-side">
+        <div class="char-name" id="enemy-name">—</div>
+        <div id="enemy-wrap">
+          <img id="enemy-img" src="" alt="Enemy">
+          <div id="effect-sprite"></div>
+        </div>
+        <div class="hp-bar-wrap">
+          <div class="hp-bar-fill" id="enemy-hp-fill"></div>
+        </div>
+        <div id="enemy-stats">
+          <span class="stat-chip phy">PHY <b id="enemy-phy-val">0</b></span>
+          <span class="stat-chip int">INT <b id="enemy-int-val">0</b></span>
+          <span id="weak-badge">—</span>
+        </div>
+      </div>
     </div>
-    <div id="hero-panel">
-      <img id="hero-img" src="" alt="Hero">
-      <span id="vs-label">VS</span>
+
+    <div id="passive-area">
+      <span id="passive-name"></span>
+      <span id="passive-desc"></span>
+    </div>
+
+    <div id="passive-pop"></div>
+
+    <div id="action-area">
+      <button id="btn-phy" class="attack-btn phy-btn">
+        <div class="btn-icon">PHY</div>
+        <div class="btn-sub">物理攻撃</div>
+      </button>
+      <button id="btn-skill" class="skill-btn">
+        <div id="skill-gauge-fill"></div>
+        <span id="skill-btn-text">SKILL 0/5</span>
+      </button>
+      <button id="btn-int" class="attack-btn int-btn">
+        <div class="btn-icon">INT</div>
+        <div class="btn-sub">魔法攻撃</div>
+      </button>
     </div>
   </div>
 
