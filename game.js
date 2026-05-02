@@ -433,10 +433,11 @@ function endGame() {
 // ---- Events ----
 $('btn-start').addEventListener('click', startGame);
 $('btn-retry').addEventListener('click', startGame);
-$('btn-phy').addEventListener('click', () => attack('phy'));
-$('btn-int').addEventListener('click', () => attack('int'));
-$('btn-skill').addEventListener('click', activateSkill);
+function bindBtn(id, fn) {
+  $(id).addEventListener('touchend', e => { e.preventDefault(); fn(); }, { passive: false });
+  $(id).addEventListener('click', fn);
+}
 
-['btn-phy', 'btn-int', 'btn-skill'].forEach(id => {
-  $(id).addEventListener('touchstart', e => e.preventDefault(), { passive: false });
-});
+bindBtn('btn-phy', () => attack('phy'));
+bindBtn('btn-int', () => attack('int'));
+bindBtn('btn-skill', activateSkill);

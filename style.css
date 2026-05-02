@@ -193,7 +193,7 @@ html, body {
 
 .attack-btn {
   flex: 1; max-width: 140px; padding: 12px 4px;
-  border: none; border-radius: 10px; cursor: pointer;
+  border: none; border-radius: 10px; cursor: pointer; touch-action: manipulation;
   display: flex; flex-direction: column; align-items: center; gap: 2px;
   transition: transform 0.1s, box-shadow 0.1s;
   font-weight: bold;
@@ -217,7 +217,7 @@ html, body {
 .skill-btn {
   flex: 0 0 auto; width: clamp(80px, 22vw, 120px); height: 56px;
   border: 2px solid #f0c04060; border-radius: 10px;
-  background: rgba(0,0,0,0.6); cursor: pointer;
+  background: rgba(0,0,0,0.6); cursor: pointer; touch-action: manipulation;
   position: relative; overflow: hidden;
   display: flex; align-items: center; justify-content: center;
   transition: transform 0.1s, border-color 0.3s, box-shadow 0.3s;
